@@ -171,8 +171,6 @@ func updateFileContent(
     try? writeHandle.write(contentsOf: Data(fileString.utf8))
     try? writeHandle.close()
 }
-
-
 // MARK: - Starting point
 
 print("Enter layer name\n(Features | Services | Core | Shared)", terminator: " : ")

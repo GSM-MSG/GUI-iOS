@@ -5,7 +5,7 @@ let dependencies = Dependencies(
     carthage: nil,
     swiftPackageManager: SwiftPackageManagerDependencies(
         [
-            .remote(url: "https://github.com/GSM-MSG/Moya.git", requirement: .branch("master"))
+    
         ],
         baseSettings: .settings(
             configurations: [

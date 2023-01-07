@@ -108,15 +108,16 @@ public extension Project {
             )
         }
         // MARK: - Unit Test
+        var testTargetDependencies = [
+            targets.contains(.demo) ?
+            TargetDependency.target(name: "\(name)DemoApp") :
+                TargetDependency.target(name: name)
+        ]
+        if targets.contains(.testing) {
+            testTargetDependencies.append(.target(name: "\(name)Testing"))
+        }
+
         if targets.contains(.unitTest) {
-            var testTargetDependencies = [
-                targets.contains(.demo) ?
-                TargetDependency.target(name: "\(name)DemoApp") :
-                    TargetDependency.target(name: name)
-            ]
-            if targets.contains(.testing) {
-                testTargetDependencies.append(.target(name: "\(name)Testing"))
-            }
             allTargets.append(
                 Target(
                     name: "\(name)Tests",

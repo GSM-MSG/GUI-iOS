@@ -5,6 +5,7 @@ public extension TargetDependency {
 }
 
 public extension TargetDependency.SPM {
+    static let CombineMoya = TargetDependency.external(name: "CombineMoya")
 }
 
 public extension Package {

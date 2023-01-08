@@ -7,6 +7,7 @@ let project = Project.makeModule(
     product: .framework,
     targets: [],
     externalDependencies: [
-        .SPM.DIM
+        .SPM.DIM,
+        .SPM.Miniature
     ]
 )

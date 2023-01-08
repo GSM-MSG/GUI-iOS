@@ -6,7 +6,8 @@ let dependencies = Dependencies(
     swiftPackageManager: SwiftPackageManagerDependencies(
         [
             .remote(url: "https://github.com/GSM-MSG/Moya.git", requirement: .branch("master")),
-            .remote(url: "https://github.com/GSM-MSG/DIM.git", requirement: .exact("1.0.1"))
+            .remote(url: "https://github.com/GSM-MSG/DIM.git", requirement: .exact("1.0.1")),
+            .remote(url: "https://github.com/GSM-MSG/Miniature.git", requirement: .exact("1.1.0"))
         ],
         baseSettings: .settings(
             configurations: [

@@ -30,6 +30,10 @@ public extension TargetDependency.Core {
 }
 
 public extension TargetDependency.Shared {
+    static let CombineExtension = TargetDependency.project(
+        target: ModulePaths.Shared.CombineExtension.targetName(type: .sources),
+        path: .relativeToShared(ModulePaths.Shared.CombineExtension.targetName(type: .sources))
+    )
     static let UtilityModule = TargetDependency.project(
         target: ModulePaths.Shared.UtilityModule.targetName(type: .sources),
         path: .relativeToShared(ModulePaths.Shared.UtilityModule.targetName(type: .sources))

@@ -40,6 +40,7 @@ public extension ModulePaths {
 
 public extension ModulePaths {
     enum Shared: String {
+        case CombineExtension
         case UtilityModule
         case GlobalThirdPartyLibrary
 

@@ -5,9 +5,8 @@ import DependencyPlugin
 let project = Project.makeModule(
     name: ModulePaths.Shared.GlobalThirdPartyLibrary.rawValue,
     product: .framework,
-    targets: [.unitTest],
+    targets: [],
     externalDependencies: [
-        .SPM.DIM,
-        .SPM.Miniature
+        .SPM.DIM
     ]
 )

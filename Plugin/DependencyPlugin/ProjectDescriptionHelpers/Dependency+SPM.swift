@@ -10,6 +10,8 @@ public extension TargetDependency.SPM {
     static let Moordinator = TargetDependency.external(name: "Moordinator")
     static let IQKeyboardManager = TargetDependency.external(name: "IQKeyboardManagerSwift")
     static let Then = TargetDependency.external(name: "Then")
+    static let DIM = TargetDependency.external(name: "DIM")
+    static let Miniature = TargetDependency.external(name: "Miniature")
 }
 
 public extension Package {

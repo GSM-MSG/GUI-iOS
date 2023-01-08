@@ -8,7 +8,7 @@ let dependencies = Dependencies(
             .remote(url: "https://github.com/GSM-MSG/Moya.git", requirement: .branch("master")),
             .remote(url: "https://github.com/GSM-MSG/MSGLayout", requirement: .exact("1.0.2")),
             .remote(url: "https://github.com/GSM-MSG/Moordinator", requirement: .exact("1.0.0")),
-            .remote(url: "https://github.com/hackiftekhar/IQKeyboardManager", requirement: .exact("6.3.0")),
+            .remote(url: "https://github.com/hackiftekhar/IQKeyboardManager", requirement: .exact("6.5.0")),
             .remote(url: "https://github.com/devxoul/Then", requirement: .exact("3.0.0"))
         ],
         baseSettings: .settings(

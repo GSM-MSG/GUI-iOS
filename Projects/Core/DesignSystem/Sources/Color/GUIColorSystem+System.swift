@@ -1,4 +1,4 @@
-import SwiftUI
+import UIKit
 
 public extension UIColor.GUIColorSystem {
     enum System: GUIColorable {

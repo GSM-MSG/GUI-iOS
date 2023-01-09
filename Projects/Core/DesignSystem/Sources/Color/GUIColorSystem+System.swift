@@ -1,6 +1,6 @@
 import SwiftUI
 
-public extension Color.GUIColorSystem {
+public extension UIColor.GUIColorSystem {
     enum System: GUIColorable {
         case negative
         case positive
@@ -9,20 +9,20 @@ public extension Color.GUIColorSystem {
     }
 }
 
-public extension Color.GUIColorSystem.System {
-    var color: Color {
+public extension UIColor.GUIColorSystem.System {
+    var color: UIColor {
         switch self {
         case .negative:
-            return DesignSystemAsset.negative.swiftUIColor
+            return DesignSystemAsset.negative.color
 
         case .positive:
-            return DesignSystemAsset.positive.swiftUIColor
+            return DesignSystemAsset.positive.color
 
         case .black:
-            return DesignSystemAsset.black.swiftUIColor
+            return DesignSystemAsset.black.color
 
         case .white:
-            return DesignSystemAsset.white.swiftUIColor
+            return DesignSystemAsset.white.color
         }
     }
 }

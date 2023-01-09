@@ -1,5 +1,5 @@
 import SwiftUI
 
 protocol GUIColorable {
-    var color: Color { get }
+    var color: UIColor { get }
 }

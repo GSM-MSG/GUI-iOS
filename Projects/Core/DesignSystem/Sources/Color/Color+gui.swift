@@ -5,7 +5,7 @@ public extension UIColor {
         case system(System)
     }
 
-    public static func gui(_ style: GUIColorSystem) -> UIColor {
+    static func gui(_ style: GUIColorSystem) -> UIColor {
         switch style {
         case let .system(system):
             return system.color

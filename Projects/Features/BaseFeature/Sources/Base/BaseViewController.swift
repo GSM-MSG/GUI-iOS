@@ -60,9 +60,13 @@ open class BaseViewController<VM: BaseViewModel>: UIViewController, BoundsProvia
     // MARK: - UI
 
     open func addView() {}
+
     open func setLayout() {}
+
     open func configureViewController() {}
+
     open func configureNavigation() {}
+
     open func bind() {}
 }
 
@@ -72,15 +76,19 @@ extension BaseViewController: LifeCyclePublishable {
     public var viewDidLoadPublisher: AnyPublisher<Void, Never> {
         viewDidLoadSubject.eraseToAnyPublisher()
     }
+
     public var viewWillAppearPublisher: AnyPublisher<Void, Never> {
         viewWillAppearSubject.eraseToAnyPublisher()
     }
+
     public var viewDidAppearPublisher: AnyPublisher<Void, Never> {
         viewDidAppearSubject.eraseToAnyPublisher()
     }
+
     public var viewWillDisappearPublisher: AnyPublisher<Void, Never> {
         viewWillDisappearSubject.eraseToAnyPublisher()
     }
+
     public var viewDidDisappearPublisher: AnyPublisher<Void, Never> {
         viewDidDisappearSubject.eraseToAnyPublisher()
     }

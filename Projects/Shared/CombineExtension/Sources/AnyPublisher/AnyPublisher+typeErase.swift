@@ -6,7 +6,7 @@ public extension AnyPublisher {
             .setFailureType(to: Failure.self)
             .eraseToAnyPublisher()
     }
-    
+
     static func fail(with error: Failure) -> Self {
         Fail(error: error).eraseToAnyPublisher()
     }

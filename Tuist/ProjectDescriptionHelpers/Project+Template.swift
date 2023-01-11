@@ -155,6 +155,7 @@ public extension Project {
         if targets.contains(.demo) {
             var demoDependencies = demoDependencies
             demoDependencies.append(.target(name: name))
+            demoDependencies.append(.SPM.Inject)
             if targets.contains(.testing) {
                 demoDependencies.append(.target(name: "\(name)Testing"))
             }
@@ -173,7 +174,8 @@ public extension Project {
                     sources: .demoSources,
                     resources: ["Demo/Resources/**"],
                     scripts: scripts,
-                    dependencies: demoDependencies
+                    dependencies: demoDependencies,
+                    settings: .settings(base: ["OTHER_LDFLAGS": .string("$(inherited) -Xlinker -interposable -all_load")])
                 )
             )
         }

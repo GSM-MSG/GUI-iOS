@@ -13,6 +13,7 @@ public extension TargetDependency.SPM {
     static let DIM = TargetDependency.external(name: "DIM")
     static let Miniature = TargetDependency.external(name: "Miniature")
     static let CombineCocoa = TargetDependency.external(name: "CombineCocoa")
+    static let Inject = TargetDependency.external(name: "Inject")
 }
 
 public extension Package {

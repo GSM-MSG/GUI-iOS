@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-open class BaseViewController<VM: BaseViewModel>: UIViewController {
+open class BaseViewController<VM: BaseViewModel>: UIViewController, BoundsProviable {
 
     // MARK: - Properties
 
@@ -12,9 +12,6 @@ open class BaseViewController<VM: BaseViewModel>: UIViewController {
     private let viewDidDisappearSubject = PassthroughSubject<Void, Never>()
     public let viewModel: VM
     public var bag = Set<AnyCancellable>()
-    public var bounds: CGRect {
-        screenBounds()
-    }
 
     // MARK: - Init
 
@@ -67,21 +64,6 @@ open class BaseViewController<VM: BaseViewModel>: UIViewController {
     open func configureViewController() {}
     open func configureNavigation() {}
     open func bind() {}
-
-    private func screenBounds() -> CGRect {
-        var parent = self.parent
-        var lastParent = parent
-
-        while parent != nil {
-            lastParent = parent
-            parent = parent?.parent
-        }
-
-        guard let bounds = lastParent?.view.window?.windowScene?.screen.bounds else {
-            return .init()
-        }
-        return bounds
-    }
 }
 
 // MARK: - LifeCyclePublishable

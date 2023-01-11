@@ -12,7 +12,9 @@ let dependencies = Dependencies(
             .remote(url: "https://github.com/devxoul/Then", requirement: .exact("3.0.0")),
             .remote(url: "https://github.com/GSM-MSG/DIM.git", requirement: .exact("1.1.0")),
             .remote(url: "https://github.com/GSM-MSG/Miniature.git", requirement: .exact("1.1.1")),
-            .remote(url: "https://github.com/CombineCommunity/CombineCocoa.git", requirement: .exact("0.4.1"))
+            .remote(url: "https://github.com/CombineCommunity/CombineCocoa.git", requirement: .exact("0.4.1")),
+            .remote(url: "https://github.com/Quick/Quick.git", requirement: .exact("6.1.0")),
+            .remote(url: "https://github.com/Quick/Nimble.git", requirement: .exact("11.2.1"))
         ],
         baseSettings: .settings(
             configurations: [

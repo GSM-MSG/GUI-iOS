@@ -128,7 +128,9 @@ public extension Project {
                     infoPlist: .default,
                     sources: .unitTests,
                     scripts: scripts,
-                    dependencies: testTargetDependencies + unitTestDependencies
+                    dependencies: testTargetDependencies + unitTestDependencies + [
+                        .SPM.Quick, .SPM.Nimble
+                    ]
                 )
             )
         }

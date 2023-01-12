@@ -42,6 +42,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Tuist
+        run: curl -Ls https://install.tuist.io | bash
+
       - name: build tuist
         run: TUIST_CI=1 tuist build
 
@@ -52,6 +55,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install Tuist
+        run: curl -Ls https://install.tuist.io | bash
 
       - name: test tuist
         run: TUIST_CI=1 tuist test

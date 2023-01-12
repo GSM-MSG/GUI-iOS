@@ -34,7 +34,7 @@ jobs:
         if: steps.cache_dependencies.outputs.cache-hit == ''
         run: tuist fetch
     outputs:
-      dependency_cache_key: ${{ steps.compute_hash_outputs.hash }}
+      dependency_cache_key: ${{ steps.compute_hash.outputs.hash }}
 
   build:
     name: 🏢 Build

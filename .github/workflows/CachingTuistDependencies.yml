@@ -13,7 +13,7 @@ env:
 
 jobs:
   caching-dependencies:
-    name: Caching Dependencies
+    name: 🧩 Caching Dependencies
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2

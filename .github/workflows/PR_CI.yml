@@ -10,7 +10,7 @@ env:
 
 jobs:
   prepare-ci:
-    name: prepare for CI
+    name: ⚙️ prepare for CI
     runs-on: macos-latest
 
     steps:

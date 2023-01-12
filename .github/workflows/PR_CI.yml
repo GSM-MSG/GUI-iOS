@@ -9,7 +9,7 @@ env:
   CACHED_DEPENDENCY_PATHS: ${{ github.workspace }}/Tuist/Dependencies
 
 jobs:
-  prepare-ci:
+  prepare-dependency:
     name: ⚙️ prepare for CI
     runs-on: macos-latest
 
@@ -31,19 +31,28 @@ jobs:
           key: ${{ steps.compute_hash.outputs.hash }}
 
       - name: Install dependencies
-        if: steps.cache_dependencies.outputs.cache-hit != 'true'
+        if: steps.cache_dependencies.outputs.cache-hit == ''
         run: tuist fetch
+    outputs:
+      dependency_cache_key: ${{ steps.compute_hash_outputs.hash }}
 
   build:
     name: 🏢 Build
     runs-on: macos-latest
-    needs: prepare-ci
+    needs: prepare-dependency
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install Tuist
         run: curl -Ls https://install.tuist.io | bash
+
+      - name: Check dependency cache
+        uses: actions/cache@v3
+        id: cache_dependencies
+        with:
+          path: ${{ env.CACHED_DEPENDENCY_PATHS }}
+          key: ${{ needs.prepare-dependency.outputs.dependency_cache_key }}
 
       - name: Install dependencies
         if: steps.cache_dependencies.outputs.cache-hit != 'true'
@@ -55,13 +64,20 @@ jobs:
   test:
     name: 🧪 Test
     runs-on: macos-latest
-    needs: prepare-ci
+    needs: prepare-dependency
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install Tuist
         run: curl -Ls https://install.tuist.io | bash
+
+      - name: Check dependency cache
+        uses: actions/cache@v3
+        id: cache_dependencies
+        with:
+          path: ${{ env.CACHED_DEPENDENCY_PATHS }}
+          key: ${{ needs.prepare-dependency.outputs.dependency_cache_key }}
 
       - name: Install dependencies
         if: steps.cache_dependencies.outputs.cache-hit != 'true'

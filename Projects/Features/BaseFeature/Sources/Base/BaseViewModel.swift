@@ -6,7 +6,5 @@ public protocol BaseViewModel {
     associatedtype Input
     associatedtype Output
 
-    var router: any Router { get }
-
     func transform(_ input: Input) -> Output
 }

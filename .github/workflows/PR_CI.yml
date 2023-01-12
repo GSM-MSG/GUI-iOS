@@ -45,6 +45,10 @@ jobs:
       - name: Install Tuist
         run: curl -Ls https://install.tuist.io | bash
 
+      - name: Install dependencies
+        if: steps.cache_dependencies.outputs.cache-hit != 'true'
+        run: tuist fetch
+
       - name: build tuist
         run: TUIST_CI=1 tuist build
 
@@ -58,6 +62,10 @@ jobs:
 
       - name: Install Tuist
         run: curl -Ls https://install.tuist.io | bash
+
+      - name: Install dependencies
+        if: steps.cache_dependencies.outputs.cache-hit != 'true'
+        run: tuist fetch
 
       - name: test tuist
         run: TUIST_CI=1 tuist test

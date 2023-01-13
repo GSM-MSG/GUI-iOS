@@ -10,6 +10,7 @@ public extension UIColor {
         switch style {
         case let .system(system):
             return system.color
+            
         case let .primary(primary):
             return primary.color
         }

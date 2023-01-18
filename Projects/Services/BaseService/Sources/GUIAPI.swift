@@ -31,7 +31,7 @@ extension GUIAPI {
             403: NetworkStatusError.forbidden,
             404: NetworkStatusError.notFound,
             409: NetworkStatusError.conflict,
-            429: NetworkStatusError.manyTooRequest,
+            429: NetworkStatusError.tooManyRequest,
             500: NetworkStatusError.internalServerError
         ]
     }

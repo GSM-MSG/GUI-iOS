@@ -6,7 +6,7 @@ public enum NetworkStatusError: Error {
     case forbidden
     case notFound
     case conflict
-    case manyTooRequest
+    case tooManyRequest
     case internalServerError
 }
 
@@ -28,7 +28,7 @@ extension NetworkStatusError: LocalizedError {
         case .conflict:
             return "중복된 객체가 있습니다."
 
-        case .manyTooRequest:
+        case .tooManyRequest:
             return "너무 많은 요청을 보냈습니다."
 
         case .internalServerError:

@@ -12,5 +12,6 @@ let project = Project.makeModule(
     internalDependencies: [
         .Shared.GlobalThirdPartyLibrary,
         .Shared.UtilityModule
-    ]
+    ],
+    resources: ["Resources/**"]
 )
